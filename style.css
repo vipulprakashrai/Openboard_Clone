@@ -1,0 +1,109 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0px;
+    padding: 0px;
+}
+
+.option-container{
+    height: 3rem;
+    width: 2.5rem;
+    background-color: #bdc3c7;
+    position: absolute;
+    top: 2rem;
+    left: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 40%;
+    font-size: 1.5rem;
+    box-shadow:rgba(0, 0, 0, 0.35) 0px 5px 15px;;
+}
+
+.tool-container{
+    display: flex;
+    height: 4.5rem;
+    width: 60vw;
+    background-color: #ecf0f1;
+    justify-content: space-around;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    position: absolute;
+    top: 2rem;
+    left: 15rem;
+
+}
+
+.pencil-tool-cont{
+    background-color: #ecf0f1;
+    height: 5rem;
+    width: 10vw;
+    display: none;
+    position: absolute;
+    top: 6.5rem;
+    left: 15rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+   
+}
+
+.pencil-width-cont{
+ background-color: #ecf0f1;
+ height: 2rem;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+.pencil-width-cont input{
+    width: 80%;
+}
+
+.pencil-color-cont{
+    background-color: #ecf0f1;
+    /* height: calc(100%-2rem); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.pencil-color{
+    width: 1rem;
+    height: 1rem;
+    border-radius: 40%;
+}
+
+.red{
+    background-color: red;
+}
+
+.black{
+    background-color: black;
+}
+.blue{
+    background-color: blue;
+}
+.green{
+    background-color: green;
+}
+
+.eraser-tool-cont{
+    background-color: green;
+    height: 5rem;
+    width:10vw;
+    position: absolute;
+    top: 6.5rem;
+    left:23.6rem;
+    background-color: #ecf0f1;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.eraser-tool-cont input{
+   width: 80%;
+   margin-left: 1rem;
+}
+
+
