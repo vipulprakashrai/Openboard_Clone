@@ -127,7 +127,7 @@ body{
     position: absolute;
     top: 20rem;
     left: 40rem;
-    display: none;
+    /* display: none; */
 }
 
 

@@ -67,9 +67,9 @@ eraserIcon.addEventListener("click", (event) => {
 })
 
 sticky.addEventListener("click", function(event){
-   console.log("click");
+   
     let stickyCont = document.createElement("div");
-    console.log(stickyCont);
+    
     stickyCont.setAttribute("class", "notes-container")
     stickyCont.innerHTML = `
          <div class="header-cont">
@@ -82,5 +82,46 @@ sticky.addEventListener("click", function(event){
     `;
    
     body.appendChild(stickyCont);
+
+    stickyCont.onmousedown = function(event) {
+
+        let shiftX = event.clientX - stickyCont.getBoundingClientRect().left;
+        let shiftY = event.clientY - stickyCont.getBoundingClientRect().top;
+      
+        stickyCont.style.position = 'absolute';
+        stickyCont.style.zIndex = 1000;
+        
+      
+        moveAt(event.pageX, event.pageY);
+      
+        
+        function moveAt(pageX, pageY) {
+            stickyCont.style.left = pageX - shiftX + 'px';
+            stickyCont.style.top = pageY - shiftY + 'px';
+        }
+      
+        function onMouseMove(event) {
+          moveAt(event.pageX, event.pageY);
+        }
+      
+        
+        document.addEventListener('mousemove', onMouseMove);
+      
+        
+        stickyCont.onmouseup = function() {
+          document.removeEventListener('mousemove', onMouseMove);
+          stickyCont.onmouseup = null;
+        };
+      
+      };
+      
+      stickyCont.ondragstart = function() {
+        return false;
+      };
    
-})
+});
+
+
+
+
+
