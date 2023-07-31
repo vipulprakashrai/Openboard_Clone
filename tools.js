@@ -8,7 +8,7 @@ let eraserCont = document.querySelector(".eraser-tool-cont");
 let sticky = document.querySelector(".notes");
 let body = document.body;
 console.log(body);
-
+let uploadBtn = document.querySelector(".upload");
 
 let pencilIcon = document.querySelector(".pencil");
 let eraserIcon = document.querySelector(".eraser");
@@ -66,6 +66,11 @@ eraserIcon.addEventListener("click", (event) => {
     }
 })
 
+uploadBtn.addEventListener("click", (event)=>{
+
+})
+
+
 sticky.addEventListener("click", function(event){
    
     let stickyCont = document.createElement("div");
@@ -82,8 +87,8 @@ sticky.addEventListener("click", function(event){
     `;
    
     body.appendChild(stickyCont);
-
-    stickyCont.onmousedown = function(event) {
+// Drag and Drop feature
+    stickyCont.onmousedown = function(event){
 
         let shiftX = event.clientX - stickyCont.getBoundingClientRect().left;
         let shiftY = event.clientY - stickyCont.getBoundingClientRect().top;
@@ -118,6 +123,29 @@ sticky.addEventListener("click", function(event){
       stickyCont.ondragstart = function() {
         return false;
       };
+
+      // headerCont functionalites like minimize and remove the note-cont.
+      let removeBtn = stickyCont.querySelector(".remove");
+      let minimizeBtn = stickyCont.querySelector(".minimize");
+      let noteCont = stickyCont.querySelector(".note-cont");
+      let isNoteContPresent = true;
+      function notesAction(remove, minimize){
+        removeBtn.addEventListener("click", (event)=>{
+           stickyCont.remove();
+        });
+       
+        minimizeBtn.addEventListener("click", (event)=>{
+          isNoteContPresent = !isNoteContPresent
+          if(isNoteContPresent){
+            noteCont.style.display = "none";
+          }
+          else{
+           noteCont.style.display = "block";
+          }
+        });
+
+      }
+      notesAction(removeBtn, minimizeBtn);
    
 });
 
