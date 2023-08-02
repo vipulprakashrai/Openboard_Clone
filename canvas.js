@@ -6,6 +6,7 @@ canvas.height = window.innerHeight;
 let pencilColorCont = document.querySelectorAll(".pencil-color");
 let pencilWidthElem = document.querySelector(".pencil-width");
 let eraserWidthElem = document.querySelector(".eraser-width");
+let download = document.querySelector(".download");
 
 let pencilColor = "red";
 let eraserColor = "white";
@@ -46,3 +47,33 @@ pencilColorCont.forEach((colorElem) =>{
 
 })
 
+
+pencilWidthElem.addEventListener("change", (event)=>{
+    pencilWidth = pencilWidthElem.value;
+    tool.lineWidth = pencilWidth;
+})
+
+eraserWidthElem.addEventListener("change", (event)=>{
+    eraserWidth = eraserWidthElem.value;
+    tool.lineWidth = eraserWidth;
+})
+
+eraserIcon.addEventListener("click", (event)=>{
+    if(isEraserContPresent){
+        tool.strokeStyle = eraserColor;
+        tool.lineWidth = eraserWidth;
+    }
+    else{
+        tool.strokeStyle = pencilColor;
+        tool.lineWidth = pencilWidth;
+    }
+})
+
+
+download.addEventListener("click", (event)=>{
+        let url = canvas.toDataURL();
+    let ankerTag = document.createElement("a");
+    ankerTag.href = url;
+    ankerTag.download = "openboad.jpg";
+    ankerTag.click();
+})
