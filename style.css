@@ -148,11 +148,11 @@ body{
 }
 
 .minimize{
- background-color: red;
+ background-color: green;
 }
 
 .remove{
-background-color: blue;
+background-color: red;
 }
 
 .note-cont{
