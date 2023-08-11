@@ -7,7 +7,7 @@ let eraserCont = document.querySelector(".eraser-tool-cont");
 
 let sticky = document.querySelector(".notes");
 let body = document.body;
-console.log(body);
+// console.log(body);
 let uploadBtn = document.querySelector(".upload");
 
 let pencilIcon = document.querySelector(".pencil");
